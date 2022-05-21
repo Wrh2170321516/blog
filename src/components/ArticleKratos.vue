@@ -94,23 +94,25 @@ export default {
     .kratos-entry-header-new {
       //display: flex;
       h2 {
-        font-size: 21px;
+        font-size: 20px;
+        font-weight: 500;
         //display: inline-block;
       }
 
       .label {
+        //position: relative;
+        //top: -3px;
+        float: left;
         display: inline-block;
         padding: 4px 6px;
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 14px;
-        color: #fff;
+        margin-right: 5px;
         vertical-align: baseline;
         white-space: nowrap;
+        line-height: 14px;
+        font-size: 12px;
+        font-weight: 700;
+        color: #fff;
         background-color: #51aded;
-        margin-right: 5px;
-        position: relative;
-        top: -3px;
         cursor: url(https://cloud.moeeh.cn/wp-content/themes/kratos-pjax-master/static/images/pointer.cur), auto;
       }
     }
