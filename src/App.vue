@@ -344,7 +344,7 @@ ol, p, ul {
 }
 
 #footer {
-  height: 300px;
+  //height: 300px;
   background: rgba(35, 40, 45, 1);
   padding: 40px 0 30px;
 
@@ -440,7 +440,7 @@ ol, p, ul {
   }
 
   .container {
-    width: 970px;
+    //width: 970px;
   }
 }
 

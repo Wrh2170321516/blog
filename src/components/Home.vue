@@ -32,7 +32,7 @@ export default {
     // 请求数据
     axios.get(
         // http://localhost:5800
-        "http://localhost:5800", {
+        "http://395149j70j.zicp.vip:22581", {
           headers: {
             'content-type': 'application/json;charset=utf-8',
           }
