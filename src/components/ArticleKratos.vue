@@ -10,7 +10,7 @@
       </div>
       <div class="kratos-post-inner-new">
         <header class="kratos-entry-header-new">
-          <a class="label" href="#">标签</a>
+          <a class="label" href="#">{{ label ? label : '标签' }}</a>
           <h2 class="kratos-entry-title-new">
             <a href="#">{{ AData.title }}</a>
           </h2>
@@ -44,7 +44,20 @@
 <script>
 export default {
   name: "ArticleKratos",
-  props: ["AData"]
+  props: ["AData"],
+  data() {
+    return {}
+  },
+  computed: {
+    // eslint-disable-next-line vue/return-in-computed-property
+    label() {
+      console.log(123)
+      let text = /【[\u4E00-\u9FA5A-Za-z0-9_\s]+】/
+      if (text.test(this.AData.title)) {
+        return text.exec(this.AData.title)[0].slice(1, -1)
+      }
+    }
+  }
 }
 </script>
 

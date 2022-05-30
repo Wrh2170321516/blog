@@ -1,27 +1,27 @@
 <template>
   <div class="Index_A">
-    <article-kratos v-for="i in IData" :AData="i" :key="i.objectId"></article-kratos>
+    <article-kratos v-for="i in $store.state.subData" :AData="i" :key="i.objectId"></article-kratos>
     <!--分页器-->
     <el-pagination
         layout="prev, pager, next"
         :page-size="5"
-        :total="AData.length"
-        style="text-align: center"
-        @current-change="currentClick($event)">
+        :total="$store.state.totalData.length"
+        @current-change="currentClick($event)"
+        style="text-align: center">
     </el-pagination>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 import ArticleKratos from "./ArticleKratos"
 
 export default {
   name: "Home",
   data() {
     return {
-      AData: [],
-      IData: []
+      // AData: [],
+      // IData: []
     }
   },
   components: {
@@ -29,7 +29,8 @@ export default {
     'article-kratos': ArticleKratos
   },
   created() {
-    // 请求数据
+    // 旧版请求数据
+    /*
     axios.get(
         // http://localhost:5800
         "http://395149j70j.zicp.vip:22581", {
@@ -45,12 +46,18 @@ export default {
         .catch((err) => {
           console.log(err)
         })
+     */
+
+    // 从vuex获取数据
+    this.$store.dispatch('getTotalData')
   },
   methods: {
     currentClick(e) {
-      // console.log(e)
-      this.IData = this.AData.slice(e * 5 - 5, e * 5)
-      // console.log(this.IData)
+      // 旧版更改数据
+      // this.IData = this.AData.slice(e * 5 - 5, e * 5)
+
+      // 从vuex更改数据
+      this.$store.dispatch('changeTheNumberOfPages', e)
     }
   }
 }
