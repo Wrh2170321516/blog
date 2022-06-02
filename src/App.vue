@@ -34,16 +34,19 @@
         <p>© 2022 Ks精神小伙. ALL RIGHTS RESERVED.</p>
         <p>已在风雨中度过 {{ getDateT }}</p>
       </div>
-
     </div>
+    <Raindrop></Raindrop>
   </div>
 </template>
 
 <script>
+import Raindrop from './components/Raindrop'
 
 export default {
   name: 'App',
-  components: {},
+  components: {
+    Raindrop
+  },
   data() {
     return {
       navigationBar: {
